@@ -32,7 +32,12 @@ nav {
     color: white;
 }
 
-nav ul {
+#menu {
+    display: flex;
+    justify-content: space-between;
+}
+
+ul {
     list-style-type: none;
     width: 50vw;
     max-width: 500px;
@@ -42,10 +47,14 @@ nav ul {
     align-items: center;
 }
 
-nav ul a {
+ul a {
     text-decoration: none;
     font-family: helvetica;
     color: white;
+}
+
+label, input {
+    display: none;
 }
 
 main {
@@ -59,22 +68,56 @@ main {
 
 main p {
     font-size: 1.5em;
-
 }
 
 @media screen and (max-width: 700px) {
-    #logo {
+
+
+    label {
+        display: block;
+        font-size: 3em;
+        color: white;
+        height: 100%;
+    }
+
+    label:hover {
+        cursor: pointer;
+        color: rgb(182, 182, 182);
+    }
+
+
+
+    ul {
         display: none;
-    }
-
-    nav {
-        padding: 0 7px;
-    }
-
-    nav ul {
+        position: absolute;
         left: 0;
-        right: 0;
-        margin: 0 auto;
+        top: 70px;
+        width: 100%;
+        max-width: unset;
+        min-width: unset;
+        background-color: antiquewhite;
+        flex-direction: column;
+        justify-content: space-around;
+        height: calc(100vh - 85px);
+    }
+
+    ul li {
+        border-bottom: 1px solid black;
+        width: 100%;
+        height: 100%;
+        background-color: burlywood;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    ul a {
+        color: black;
+        font-size: 2em;
+    }
+
+    #ham:checked + ul {
+        display: flex;
     }
 
 }
